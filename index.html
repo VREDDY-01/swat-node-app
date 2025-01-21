@@ -7,13 +7,24 @@
 </head>
 <body>
     <h1>Demo Logging Page</h1>
-    <button onclick="generateLog()">Click Me</button>
+    <button onclick="generateLog()">Generate Log</button>
+    <button onclick="sendGood()">Send Good</button>
+
     <script>
+        // Function to send a POST request to /log
         function generateLog() {
             fetch('/log', { method: 'POST' })
                 .then(() => alert('Log generated!'))
                 .catch(err => console.error('Error generating log:', err));
         }
+
+        // Function to send a POST request to /good
+        function sendGood() {
+            fetch('/good', { method: 'POST' })
+                .then(() => alert('Good log sent!'))
+                .catch(err => console.error('Error sending good log:', err));
+        }
     </script>
 </body>
 </html>
+
